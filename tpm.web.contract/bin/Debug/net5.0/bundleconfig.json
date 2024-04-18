@@ -1,0 +1,66 @@
+[
+  {
+    "outputFileName": "wwwroot/script-handler/app/controller/indexcontroller.js",
+    "inputFiles": [
+      "wwwroot/script-handler/app/controller/master-page-controller.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/script-handler/app/angularjs-plugin.js",
+    "inputFiles": [
+      "wwwroot/angular-1.8.2/angular-route.js",
+      "wwwroot/script-handler/app/Scripts/plugin/ng-tags-input/ng-tags-input.js",
+      "wwwroot/libjs/plugins/jalert.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/script-handler/app/directives/directives.js",
+    "inputFiles": [
+      "wwwroot/script-handler/app/directives/file-attach-upload/file-attach-upload.js",
+      "wwwroot/script-handler/app/directives/lazy-load-more.js",
+      "wwwroot/script-handler/app/directives/custom-select2/custom-select2.js",
+      "wwwroot/script-handler/app/directives/date-time-picker/date-time-picker.js",
+      "wwwroot/script-handler/app/directives/format-money.js",
+      "wwwroot/script-handler/app/directives/get-width.js",
+      "wwwroot/script-handler/app/directives/lazy-load.js",
+      "wwwroot/script-handler/app/directives/no-input.js",
+      "wwwroot/script-handler/app/directives/when-enter.js",
+      "wwwroot/script-handler/app/directives/compile.js",
+      "wwwroot/script-handler/app/directives/pagination-style/pagination-style.js",
+      "wwwroot/script-handler/app/directives/pagination-style2/pagination-style2.js",
+      "wwwroot/script-handler/app/directives/input-format.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/script-handler/app/factory/indexfactory.js",
+    "inputFiles": [
+      "wwwroot/script-handler/app/factory/local-storage.js",
+      "wwwroot/script-handler/app/factory/common-factory.js",
+      "wwwroot/script-handler/app/factory/api-helper.js",
+      "wwwroot/script-handler/app/factory/util-factory.js",
+      "wwwroot/script-handler/app/factory/helper-factory.js",
+      "wwwroot/script-handler/factory-data/data-factory.js"
+
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/script-handler/app/filters/filters.js",
+    "inputFiles": [
+      "wwwroot/script-handler/app/filters/date-format.js",
+      "wwwroot/script-handler/app/filters/trust-html.js",
+      "wwwroot/script-handler/app/filters/if-empty.js",
+      "wwwroot/script-handler/app/filters/to-fixed-decimal.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/script-handler/app/app-bundle.js",
+    "inputFiles": [
+      "wwwroot/script-handler/app/scripts/utiljs.js",
+      "wwwroot/script-handler/app/controller/indexcontroller.js",
+      "wwwroot/script-handler/app/directives/directives.js",
+      "wwwroot/script-handler/app/factory/indexfactory.js",
+      "wwwroot/script-handler/app/filters/filters.js",
+      "wwwroot/script-handler/app/app.js"
+    ]
+  }
+]

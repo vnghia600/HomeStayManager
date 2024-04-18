@@ -1,0 +1,44 @@
+﻿.container {
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.input-field {
+    margin-bottom: 20px;
+}
+
+    .input-field input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+    .button-container a,
+    .button-container button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+.cancel-button {
+    background-color: #ccc;
+}
+
+.save-button {
+    background-color: #007bff;
+}

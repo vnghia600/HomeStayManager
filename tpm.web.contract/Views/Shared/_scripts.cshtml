@@ -1,0 +1,22 @@
+﻿@using tpm.dto.admin;
+@{
+    UserPrincipal CurrentUser = SessionHelper.Get<UserPrincipal>(Context.Session, SessionKeys.CurrentUser);
+    //@Html.Raw(Json.Serialize(CurrentUser.UserID));
+}
+
+<!-- Core JS files -->
+<script src="/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+<!-- /core JS files -->
+<!-- Theme JS files -->
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/jquery/jquery.min.js"></script>
+<!-- /theme JS files -->
+<script src="/angular-1.8.2/angular.min.js"></script>
+<script src="/script-handler/app/angularjs-plugin.min.js"></script>
+<script src="/script-handler/app/app-bundle.min.js"></script>
+<script>
+    var MasterData = {}, DataSetting = {};
+    MasterData.SessID = '@Html.Raw(Context.Session.Id)';
+    MasterData.DisplayName = '@@CurrentUser.DisplayName';
+    MasterData.UserIDCurrent =""; 
+</script>

@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>tpm.dto.admin</AssemblyName>
+    <RootNamespace>tpm.dto.admin</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Request\USR\**" />
+    <Content Remove="Request\USR\**" />
+    <EmbeddedResource Remove="Request\USR\**" />
+    <None Remove="Request\USR\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Response\CRMP\CustomerAddressRes.cs" />
+    <Compile Remove="Response\CRMP\CustomerReadByIDRes.cs" />
+    <Compile Remove="Response\CRMP\CustomerReadByID_MobileNumberRes.cs" />
+    <Compile Remove="Response\CRMP\CustomerRes.cs" />
+    <Compile Remove="Response\CRMP\CustomerTransactionStatisticByStatusRes.cs" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="FluentValidation" Version="10.3.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="protobuf-net.Core" Version="3.0.101" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+  </ItemGroup>
+    
+		
+  <ItemGroup>
+    <Reference Include="Core.DTO">
+      <HintPath>..\tpm.dll\Core.DTO.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+    
+		
+  <ItemGroup>
+    <Folder Include="Request\HRM\" />
+  </ItemGroup>
+
+</Project>

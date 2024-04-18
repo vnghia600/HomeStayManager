@@ -1,0 +1,125 @@
+﻿
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="content-inner">
+        <div class="page-header page-header-light shadow">
+            <div class="page-header-content d-lg-flex border-top">
+                <div class="d-flex">
+                    <div class="breadcrumb py-2">
+                        <a asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="ph-house"></i></a>
+                        <span class="breadcrumb-item active">Nhân Viên</span>
+                        <span class="breadcrumb-item active"><a asp-controller="NhanVien" asp-action="Index">DS Nhân Viên</a></span>
+                        <span class="breadcrumb-item active"><a asp-controller="NhanVien" asp-action="Edit">Chỉnh Sửa TT Nhân Viên</a></span>
+
+                    </div>
+
+                    <a href="#breadcrumb_elements"
+                       class="btn btn-light align-self-center collapsed d-lg-none border-transparent rounded-pill p-0 ms-auto"
+                       data-bs-toggle="collapse">
+                        <i class="ph-caret-down collapsible-indicator ph-sm m-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="card">
+                <h6 style="font-size: 30px; text-align: center;margin: 15px 0px;color: #0066FF; ">CHỈNH SỬA TT NHÂN VIÊN</h6>
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" @*asp-for="MaNv"*@ />
+                    <fieldset style="margin: 15px !important;">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label @*asp-for="Cccd"*@ class="control-label">CCCD</label>
+                                    <input @*asp-for="Cccd"*@ class="form-control" />
+                                    <span @*asp-validation-for="Cccd"*@ class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <label @*asp-for="TenNv"*@ class="control-label">Tên Nhân Viên</label>
+                                <input @*asp-for="TenNv"*@ type="text" class="form-control">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label @*asp-for="GioiTinh"*@ class="control-label">Giới Tính</label>
+                                    <select @*asp-for="GioiTinh"*@ class="form-control">
+                                        <option value="1">Nam</option>
+                                        <option value="0">Nữ</option>
+                                    </select>
+                                    <span @*asp-validation-for="GioiTinh"*@ class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label @*asp-for="NgaySinh"*@ class="control-label">Ngày Sinh</label>
+                                    <input @*asp-for="NgaySinh"*@ class="form-control" />
+                                    <span @*asp-validation-for="NgaySinh"*@ class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label @*asp-for="Sdt"*@ class="control-label">Số Điện Thoại</label>
+                                    <input @*asp-for="Sdt"*@ type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label @*asp-for="DiaChi"*@ class="control-label">Địa Chỉ</label>
+                                    <input @*asp-for="DiaChi"*@ class="form-control" />
+                                    <span @*asp-validation-for="DiaChi"*@ class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label class="control-label">Email</label>
+                                    <input @*asp-for="Email"*@ type="text" class="form-control">
+                                </div>
+                            </div>                         
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label @*asp-for="MaChucVu"*@ class="control-label">Chức Vụ</label>
+                                    <select @*asp-for="MaChucVu"*@ class="form-control" asp-items="ViewBag.ChucVuList"></select>
+                                    <span @*asp-validation-for="MaChucVu"*@ class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label @*asp-for="MaPhongBan"*@ class="control-label">Phòng Ban</label>
+                                    <select @*asp-for="MaPhongBan"*@ class="form-control" asp-items="ViewBag.PhongBanList"></select>
+                                    <span @*asp-validation-for="MaPhongBan"*@ class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label @*asp-for="TinhTrang"*@ class="control-label">Tình Trạng</label>
+                                    <select @*asp-for="TinhTrang"*@ class="form-control">
+                                        <option value="1">Đang Làm</option>
+                                        <option value="0">Nghỉ Việc</option>
+                                    </select>
+                                    <span @*asp-validation-for="TinhTrang"*@ class="text-danger"></span>
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                                <label @*asp-for="HinhAnhFile"*@ class="control-label">Hình Ảnh</label>
+                                <input @*asp-for="HinhAnhFile"*@ type="file" class="form-control" accept="image/*">
+                                <span @*asp-validation-for="HinhAnh"*@ class="text-danger"></span>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                    <div style="justify-content:center !important" class="card-footer d-flex justify-content-center">
+                        <a class="btn btn-primary ms-3" style="text-decoration: none;"
+                           asp-action="Index">Quay Lại</a>
+                        <input style="width: 90px" type="submit" value="Lưu" class="btn btn-primary ms-3">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

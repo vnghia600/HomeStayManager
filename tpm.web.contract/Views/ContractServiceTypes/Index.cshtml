@@ -1,0 +1,71 @@
+﻿@{
+    List<string> BreadCrumb = new List<string>();
+    BreadCrumb.Add("<span class='breadcrumb-item active'> Danh sách loại dịch vụ</span>");
+    ViewBag.BreadCrumb = BreadCrumb;
+}
+<!-- Content area -->
+<div class="content" ng-controller="IndexController">
+
+	<!-- Search field -->
+	<div class="card">
+		<div class="card-body">
+			<div class="d-sm-flex align-items-sm-start">
+				<div class="form-control-feedback form-control-feedback-start flex-grow-1 mb-3 mb-sm-0">
+                    <input type="text" class="form-control" placeholder="Tên loại" ng-model="ServiceType.Search.Text">
+					<div class="form-control-feedback-icon">
+						<i class="ph-magnifying-glass"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /search field -->
+    <!-- Bordered table -->
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width:50px">STT</th>
+                        <th>Tên dịch vụ</th>
+                        <th style="width:170px">Ngày cập nhật</th>
+                        <th style="width:170px">Ngày tạo</th>
+                        <th style="width:60px"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @*<tr ng-repeat="item in ServiceType.Lst">*@
+                    <tr ng-repeat="item in ServiceType.Filter = (ServiceType.Lst | filter : ServiceType.Search.CustomFilter) | limitTo: ServiceType.Pager.PageSize: ServiceType.Pager.StartIndex">
+                        <td style="text-align:center">{{$index + 1 + ServiceType.Pager.StartIndex}}</td>
+                        <td>{{item.Name}}</td>
+                        <td style="text-align:center">{{item.UpdatedDate | dateFormat: 'dd/MM/yyyy HH:mm'}}</td>
+                        <td style="text-align:center">{{item.UpdatedDate | dateFormat: 'dd/MM/yyyy HH:mm'}}</td>
+                        <td style="text-align: center;vertical-align: middle; padding: 0px; margin: 0;">
+                            <a href="javascript:void(0);" ng-click="Edit(item.Service_Type_ID);">
+                                <i class="icon-pencil7 icon-08x" title="Cập nhật"></i>
+                            </a>
+                            <a href="javascript:void(0);" ng-click="Edit(item.Service_Type_ID);" class="text-danger">
+                                <i class="icon-bin icon-08x" title="Cập nhật"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr ng-show="ServiceType.Filter.length == 0" style="text-align:center">
+                        <td colspan="5">Không có dữ liệu</td>
+                    </tr>
+                    <tr ng-show="ServiceType.Filter.length > 0">
+                        <td colspan="5">
+                            <div style="text-align:right;padding:0px;">
+                                <pagination-style1 total-items="ServiceType.Filter.length" pager="ServiceType.Pager" fn-call-back="ServiceType.Search.Paging(PageClicked)"></pagination-style1>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- /bordered table -->
+</div>
+<!-- /content area -->
+@section jsScript{
+    <script src="~/script-handler/contract-service-types/index-controller.js"></script>
+}

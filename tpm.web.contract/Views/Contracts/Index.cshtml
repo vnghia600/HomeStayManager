@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="page-header page-header-light shadow">
+    <div class="page-header-content d-lg-flex">
+        <div class="collapse d-lg-block ms-lg-auto" id="breadcrumb_elements">
+        </div>
+    </div>
+
+    <div class="page-header-content d-lg-flex border-top">
+        <div class="d-flex">
+            <div class="breadcrumb py-2">
+                <a asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="ph-house"></i></a>
+                <span class="breadcrumb-item active">Danh Sách</span>
+                <span class="breadcrumb-item active"><a asp-action="Index">DS Hợp Đồng</a></span>
+            </div>
+
+            <a href="#breadcrumb_elements"
+               class="btn btn-light align-self-center collapsed d-lg-none border-transparent rounded-pill p-0 ms-auto"
+               data-bs-toggle="collapse">
+                <i class="ph-caret-down collapsible-indicator ph-sm m-1"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="card-body1">
+        <div class="column-left">
+            <a class="btn btn-primary" asp-action="Create">Thêm Hợp Đồng</a>
+        </div>
+        <div class="column-right">
+            <input type="text" id="keyword" class="input-contract" placeholder="Nhập từ khóa tìm kiếm">
+            <button onclick="search()" class="button-contract"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="card">
+
+
+        <div>
+            <table class="table datatable-column-search-inputs">
+                <thead>
+                    <tr class="list-contract">
+                        <th>Tên hợp đồng</th>
+                        <th>Tên công ty</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                        <th>Dịch vụ</th>
+                        <th>Tên khách hàng</th>
+                        <th>SĐT</th>
+                        <th>Tiến độ</th>
+                        <th>Giá trị hợp đồng</th>
+                        <th>Tên nhân viên</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hợp Đồng Kinh Doanh</td>
+                        <td>Công Ty Nông Lâm</td>
+                        <td>2011/04/25</td>
+                        <td>2011/04/25</td>
+                        <th>
+                            <a asp-area="" asp-controller="HopDong" asp-action="ServicesDetail">Quảng cáo tiktok</a>
+                        </th>
+                        <th>Vũ Xuân Cường</th>
+                        <th>085690xxxx</th>
+                        <th>56%</th>
+                        <td>2.000.000.000</td>
+                        <td>Đoàn Thị Kim Lai</td>
+                        <td>
+                            <span class="badge bg-danger bg-opacity-10 text-info"
+                                  style="--bg-opacity: 1;color: rgba(var(--white-rgb), var(--text-opacity)) !important;background-color: rgba(var(--danger-rgb), var(--bg-opacity)) !important;">
+                                Chưa hoàn thành
+                            </span>
+                        </td>
+                        <td>
+                            <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

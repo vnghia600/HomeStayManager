@@ -1,0 +1,35 @@
+﻿<div class="container">
+    <div class="input-field">
+        <input type="text" id="serviceName" placeholder="Nhập tên dịch vụ">
+    </div>
+    <div class="button-container">
+        <a href="/Services" class="cancel-button">Hủy</a>
+        <button class="save-button" onclick="saveService()">Lưu</button>
+    </div>
+</div>
+<script>
+    function saveService() {
+        // Lấy giá trị từ trường nhập liệu
+        var serviceName = document.getElementById('serviceName').value;
+
+        // Kiểm tra nếu serviceName rỗng
+        if (serviceName.trim() === '') {
+            alert('Vui lòng nhập tên dịch vụ.');
+            return;
+        } else {
+            $.ajax({
+                url: "/Services/Create",
+                type: 'POST',
+                dataType: 'json',
+                data: data,
+                success: function (data) {
+
+                }
+            });
+        }
+
+        // Thực hiện xử lý lưu dịch vụ
+        console.log('Đã lưu dịch vụ:', serviceName);
+    }
+</script>
+<link href="~/assets/css/createservice.css" rel="stylesheet" />

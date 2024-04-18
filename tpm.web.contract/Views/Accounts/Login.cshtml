@@ -1,0 +1,26 @@
+﻿@model tpm.dto.admin.UserPrincipal
+
+@{
+    ViewData["Title"] = "Đăng nhập";
+}
+<div class="login-container">
+    <h2>Đăng Nhập</h2>
+    @using (Html.BeginForm("Login", "Accounts", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+        <div class="input-group">
+            <label for="username">Email hoặc Số điện thoại:</label>
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Mật khẩu:</label>
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+            <span class="text-danger">@Html.ValidationMessageFor(model => model.Password)</span>
+        </div>
+        <div class="input-group">
+            <button type="submit" class="btn btn-primary">Đăng nhập</button>
+        </div>
+    }
+</div>

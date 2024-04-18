@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content">
+    <div class="card">
+        <div class="card-body" style="margin-bottom: 20px">
+            @*<a class="btn btn-primary" asp-area="" asp-controller="HopDong" asp-action="Create">Thêm</a>*@
+            <a class="btn btn-primary" asp-area="" asp-controller="HopDong" asp-action="Create">Thêm</a>
+        </div>
+        <table class="table datatable-column-search-inputs">
+            <thead>
+                <tr style="text-align:center;">
+                    <th>STT</th>
+                    <th>Ngày</th>
+                    <th>Nhân viên phụ trách</th>
+                    <th>Tình trạng</th>
+                    <th>Trạng Thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="text-align:center">
+                    <td>1</td>
+                    <td>2011/04/25</td>
+                    <td>Biện Anh Pháp</td>
+                    <th style="text-align:center">
+                        <i class="fa-solid fa-toggle-on" style="color: #94bbff;"></i>
+                    </th>
+                    <td style="text-align:center;">
+                        <span class="badge bg-danger bg-opacity-10 text-info"
+                              style="--bg-opacity: 1;color: rgba(var(--white-rgb), var(--text-opacity)) !important;background-color: rgba(var(--danger-rgb), var(--bg-opacity)) !important;">
+                            Chưa
+                            ký
+                        </span>
+                    </td>
+                    <td style="text-align:center;">
+                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

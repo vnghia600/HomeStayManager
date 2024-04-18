@@ -1,0 +1,154 @@
+.navbar-brand img {
+    height: 40px;
+}
+.status-indicator-container {
+    --indicator-size: none;
+    --indicator-gap: none;
+    position: relative;
+}
+
+.name-icon {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+    height: 35px;
+    width: 35px;
+    background-image: url('/tpm/images/name-icon.png');
+    background-repeat: no-repeat;
+    background-size: 330px 163px
+}
+
+.name-icon-Q {
+    background-position-x: -5px;
+    background-position-y: -4px
+}
+
+.name-icon-O {
+    background-position-x: -5px;
+    background-position-y: -44px
+}
+
+.name-icon-J {
+    background-position-x: -5px;
+    background-position-y: -84px
+}
+
+.name-icon-N {
+    background-position-x: -6px;
+    background-position-y: -124px
+}
+
+.name-icon-W {
+    background-position-x: -46px;
+    background-position-y: -4px
+}
+
+.name-icon-P {
+    background-position-x: -46px;
+    background-position-y: -44px
+}
+
+.name-icon-K {
+    background-position-x: -46px;
+    background-position-y: -84px
+}
+
+.name-icon-M {
+    background-position-x: -46px;
+    background-position-y: -124px
+}
+
+.name-icon-E {
+    background-position-x: -87px;
+    background-position-y: -4px
+}
+
+.name-icon-A {
+    background-position-x: -87px;
+    background-position-y: -44px
+}
+
+.name-icon-L {
+    background-position-x: -87px;
+    background-position-y: -84px
+}
+
+.name-icon-R {
+    background-position-x: -127px;
+    background-position-y: -4px
+}
+
+.name-icon-S {
+    background-position-x: -127px;
+    background-position-y: -44px
+}
+
+.name-icon-Z {
+    background-position-x: -127px;
+    background-position-y: -84px
+}
+
+.name-icon-T {
+    background-position-x: -168px;
+    background-position-y: -4px
+}
+
+.name-icon-D {
+    background-position-x: -168px;
+    background-position-y: -44px
+}
+
+.name-icon-X {
+    background-position-x: -168px;
+    background-position-y: -84px
+}
+
+.name-icon-Y {
+    background-position-x: -209px;
+    background-position-y: -4px
+}
+
+.name-icon-F {
+    background-position-x: -209px;
+    background-position-y: -44px
+}
+
+.name-icon-C {
+    background-position-x: -209px;
+    background-position-y: -84px
+}
+
+.name-icon-U {
+    background-position-x: -249px;
+    background-position-y: -4px
+}
+
+.name-icon-G {
+    background-position-x: -249px;
+    background-position-y: -44px
+}
+
+.name-icon-V {
+    background-position-x: -249px;
+    background-position-y: -84px
+}
+
+.name-icon-I {
+    background-position-x: -289px;
+    background-position-y: -4px
+}
+
+.name-icon-H {
+    background-position-x: -289px;
+    background-position-y: -44px
+}
+
+.name-icon-B {
+    background-position-x: -289px;
+    background-position-y: -84px
+}
+
+.icon-08x {
+    font-size: calc(0.8 * var(--icon-font-size));
+}

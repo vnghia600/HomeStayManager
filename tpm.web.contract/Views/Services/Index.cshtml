@@ -1,0 +1,43 @@
+﻿<div class="content">
+    <div class="card-body">
+        <input style="padding: 7px; border-radius: 7px;" type="text" placeholder="Thêm dịch vụ"></input>
+        <a href="/Services/Create" ; style="margin-bottom: 4px; margin-left: 0px;" class="btn btn-primary">Thêm Dịch Vụ</a>
+    </div>
+    <div class="card">
+        <div>
+            <table class="table datatable-column-search-inputs">
+                <thead>
+                    <tr class="list-contract">
+                        <th>STT</th>
+                        <th>Tên dịch vụ</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="serviceTableBody">
+                    @if (ViewBag.ServiceTypes != null)
+                    {
+                        var stt = 1;
+                        @foreach (var serviceTypes in ViewBag.ServiceTypes)
+                        {
+                            <tr>
+                                <td>@stt</td>
+                                <td>@serviceTypes.Name</td>
+                                <td>
+                                    <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="#" class="delete-link" data-serviceid="@serviceTypes.Service_Type_ID"><i class="fa-solid fa-trash-can"></i></a>
+                                </td>
+                            </tr>
+                            stt++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="7">Không có dữ liệu</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

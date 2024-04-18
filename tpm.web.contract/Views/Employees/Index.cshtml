@@ -1,0 +1,288 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "Danh sách nhân viên";
+    List<string> BreadCrumb = new List<string>();
+    //BreadCrumb.Add("<a href='index.html' class='breadcrumb-item'>name</a>");
+    BreadCrumb.Add("<span class='breadcrumb-item active'> Nhân viên</span>");
+    ViewBag.BreadCrumb = BreadCrumb;
+}
+
+
+
+
+<div class="content">
+    <div class="card-body">
+        <a id="openPopup" class="btn btn-primary">Thêm Nhân Viên</a>
+    </div>
+    <div class="card">
+        <div id="myPopup" class="popup">
+            <h2>Nhập thông tin</h2>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="employeeID">Mã Nhân Viên:</label>
+                    <input type="text" placeholder="Mã Nhân Viên" id="employeeID">
+                    <label for="FullName">Họ và tên:</label>
+                    <input type="text" placeholder="Họ Tên" id="fullName">
+                    <label for="genderType">Giới tính:</label>
+                    <select id="genderTypeDropdown">
+                        @if (ViewBag.Genders != null)
+                        {
+                            @foreach (var gender in ViewBag.Genders)
+                            {
+                                <option value="@gender.GenderID">@gender.GenderName</option>
+                            }
+                        }
+                        else
+                        {
+                            <p>Danh sách trống.</p>
+                        }
+                    </select>
+                </div>
+                <div class="form-column">
+                    <label for="dob">Ngày sinh:</label>
+                    <input type="date" id="dob">
+                    <label for="phone">Điện Thoại:</label>
+                    <input type="text" placeholder="09(xxxx)" id="phone">
+                    <label for="email">Email:</label>
+                    <input type="text" placeholder="abc@gmail.com" id="email">
+                </div>
+                <div class="form-column">
+                    <label for="departmentType">Phòng ban:</label>
+                    <select id="departmentTypeDropdown">
+                        @if (ViewBag.Departments != null)
+                        {
+                            @foreach (var departmentType in ViewBag.Departments)
+                            {
+                                <option value="@departmentType.DepartmentID">@departmentType.DepartmentName</option>
+                            }
+                        }
+                        else
+                        {
+                            <p>Danh sách trống.</p>
+                        }
+                    </select>
+                    <label for="positionType">Chức vụ:</label>
+                    <select id="positionTypeDropdown">
+                        @if (ViewBag.Positions != null)
+                        {
+                            @foreach (var position in ViewBag.Positions)
+                            {
+                                <option value="@position.PositionID">@position.PositionName</option>
+                            }
+                        }
+                        else
+                        {
+                            <p>Danh sách đơn vị tính trống.</p>
+                        }
+                    </select>
+                    <label for="employeeType">Loại nhân viên:</label>
+                    <select id="employeeTypeDropdown">
+                        @if (ViewBag.EmployeeTypes != null)
+                        {
+                            @foreach (var employeeType in ViewBag.EmployeeTypes)
+                            {
+                                <option value="@employeeType.EmployeeTypeID">@employeeType.EmployeeTypeName</option>
+                            }
+                        }
+                        else
+                        {
+                            <p>Danh sách trống.</p>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button id="saveButton">Lưu</button>
+                <button id="closePopup">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+    <table class="table datatable-column-search-inputs service" id="employeeTable">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã Nhân Viên</th>
+                <th>Họ Tên - Giới tính - SĐT</th>
+                <th>Ngày Sinh</th>
+                <th>Email</th>
+                <th>
+                    <div>Chức vụ - Hình thức</div>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="serviceTableBody">
+
+            @if (ViewBag.Employees != null)
+            {
+                int stt = 1;
+
+                @foreach (var employee in ViewBag.Employees)
+                {
+                    // Khai báo biến đếm và tăng giá trị sau mỗi lần lặp
+                    <tr>
+                        <td>@stt</td>
+                        <td>@employee.EmployeeID</td>
+                        <td>
+                            <div>@employee.FullName</div>
+                            <div>
+                                <span>GT: </span>
+                                <span style="font-weight: 700">@employee.GenderName</span>
+                                <span> - </span>
+                                <span>@employee.Phone</span>
+                            </div>
+                        </td>
+                        @{
+                            var dob = DateTime.Parse(employee.DOB.ToString());
+                            var formattedDOB = dob.ToString("dd'/'MM'/'yyyy");
+                        }
+                        <td>@formattedDOB</td>
+                        <td>@employee.Email</td>
+                        <td>
+                            <div>@employee.DepartmentName - @employee.PositionName</div>
+                            <div>@employee.EmployeeTypeName</div>
+                        </td>
+                        <td>
+                            <a data-employeeid="@employee.ID" href="#" onclick="openEditPopupE(@employee.ID)"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a class="delete-link" data-employeeid="@employee.ID" onclick="deleteEmployee(event, @employee.ID)"><i class="fa-solid fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                    stt++;
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7">Không có dữ liệu</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    var selectedID;
+    $("#openPopup").click(function () {
+        openCreatePopup();
+    });
+    $("#closePopup").click(function () {
+        $("#myPopup").hide();
+        $(".overlay").hide();
+        $("body").removeClass("popup-active");
+
+        $("#employeeID").val("");
+        $("#fullName").val("");
+        $("#phone").val("");
+        $("#email").val("");
+    });
+
+    $(document).ready(function () {
+        $("#saveButton").click(function () {
+            var id = selectedID;
+            var employeeID = $("#employeeID").val();
+            var genderID = $("#genderTypeDropdown").val();
+            var departmentID = $("#departmentTypeDropdown").val();
+            var positionID = $("#positionTypeDropdown").val();
+            var employeeTypeID = $("#employeeTypeDropdown").val();
+            var dobValue = $("#dob").val();
+            var dobParts = dobValue.split('-');
+            var day = dobParts[0].padStart(2, '0');
+            var month = dobParts[1].padStart(2, '0');
+            var year = dobParts[2];
+            var formattedDOB = day + '-' + month + '-' + year;
+            var phone = $("#phone").val();
+            var email = $("#email").val();
+            var fullName = $("#fullName").val();
+
+
+            var data = {
+                ID: id,
+                EmployeeID: employeeID,
+                FullName: fullName,
+                DOB: formattedDOB,
+                Phone: phone,
+                Email: email,
+                GenderID: genderID,
+                DepartmentID: departmentID,
+                PositionID: positionID,
+                EmployeeTypeID: employeeTypeID
+            };
+
+
+            if (id) {
+                $.ajax({
+                    url: "/Employees/Update",
+                    type: "POST",
+                    dataType: "json",
+                    data: data,
+                    success: function (data) {
+                        alert("Cập nhật thành công!");
+                        console.log(data);
+                        closePopupE();
+                        location.reload();
+                    },
+                    error: function (error) {
+                        console.log("Lỗi khi cập nhật:", error);
+                        alert("Lỗi khi cập nhật. Vui lòng kiểm tra console log.");
+                    }
+                });
+
+
+            } else {
+                $.ajax({
+                    url: '/Employees/Create',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: data,
+                    success: function (data) {
+
+                        alert("Tạo thành công!");
+                        console.log(data);
+                        closePopupE();
+
+
+                        var newEmployee = data.employee[0];
+                        var dob = new Date(newEmployee.dob);
+
+                        var formattedDOB = dob.getDate().toString().padStart(2, "0") + '/' + (dob.getMonth() + 1).toString().padStart(2, "0") + '/' + dob.getFullYear();
+                        var newRow = '<tr>' +
+                            '<td>' + ($('.table.datatable-column-search-inputs.service tbody tr').length + 1) + '</td>' +
+                            '<td>' + newEmployee.employeeID + '</td>' +
+                            '<td>' +
+                            '<div>' + newEmployee.fullName + '</div>' +
+                            '<div>' +
+                            '<span>GT: </span>' +
+                            '<span style="font-weight: 700">' + newEmployee.genderName + '</span>' +
+                            '<span> - </span>' +
+                            '<span style="font-weight: 700">' + newEmployee.phone + '</span>' +
+                            '</div>' +
+                            '</td>' +
+                            '<td>' + formattedDOB + '</td>' +
+                            '<td>' + newEmployee.email + '</td>' +
+                            '<td>' +
+                            '<div>' + newEmployee.departmentName + ' - ' + newEmployee.positionName + '</div>' +
+                            '<div>' + newEmployee.employeeTypeName + '</div>' +
+                            '</td>' +
+                            '<td>' +
+                            '<a data-employeeid="' + newEmployee.id + '" href="#" onclick="openEditPopupE(' + newEmployee.id + ')"><i class="fa-solid fa-pen-to-square"></i></a>' +
+                            '<span class="icon-space"></span>' +
+                            '<a class="delete-link" data-employeeid="' + newEmployee.id + '" onclick="deleteEmployee(event, ' + newEmployee.id + ')"><i class="fa-solid fa-trash-can"></i></a>' +
+                            '</td>' +
+                            '</td>' +
+                            '</tr>';
+                        $('.table.datatable-column-search-inputs.service tbody').append(newRow);
+
+                    },
+                    error: function (error) {
+                        console.log("Lỗi khi tạo:", error);
+                        alert("Lỗi khi tạo. Vui lòng kiểm tra console log.");
+                    }
+                });
+            }
+        });
+    });
+</script>
+<script src="~/assets/js/site.js"></script>

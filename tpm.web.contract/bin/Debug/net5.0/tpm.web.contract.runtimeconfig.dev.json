@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\DokGo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\DokGo\\.nuget\\packages"
+    ]
+  }
+}

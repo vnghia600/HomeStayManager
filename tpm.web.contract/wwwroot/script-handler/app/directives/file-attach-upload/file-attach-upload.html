@@ -1,0 +1,21 @@
+﻿<span class="attack-file-line" style="float: left;height: 30px;">
+</span>
+<button type="button" class="attack-file-icon" 
+        ng-disabled="myroot.IsDisabled"
+        ng-click="myroot.OpenBrowse()" style="float: left;">
+    <i style="height: 10px;" class="glyphicon glyphicon-paperclip"></i>
+</button>
+<div style="display:none !important;">
+    <div class="input input-file" myroot="myroot" is-loading="MasterPage.IsLoading">
+        <span class="button">
+            <input class="files" type="file" name="file" accept="{{myroot.Core.Accept}}">Browse
+        </span>
+        <input type="text" ng-model="myroot.LstFile[0].FileName" placeholder="Đính kèm file excel" readonly="" style="font-family: Arial,sans-serif; font-size: 13px;">
+        <div class="progress" style="height: 2px;margin-bottom: 0;">
+            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                 style="width: {{myroot.LstFile[0].Percent}}%;">
+                <span class="sr-only">{{myroot.LstFile[0].Percent}}% Complete</span>
+            </div>
+        </div>
+    </div>
+</div>

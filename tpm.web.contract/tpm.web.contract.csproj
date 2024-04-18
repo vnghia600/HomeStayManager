@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Autofac" Version="7.0.1" />
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\tpm.business\tpm.business.csproj" />
+		<ProjectReference Include="..\tpm.dto\tpm.dto.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Core.DataAccess">
+			<HintPath>..\tpm.dll\Core.DataAccess.dll</HintPath>
+		</Reference>
+		<Reference Include="Core.DTO">
+			<HintPath>..\tpm.dll\Core.DTO.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+</Project>

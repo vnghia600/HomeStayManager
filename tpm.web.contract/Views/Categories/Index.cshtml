@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="input-group">
+                    <div class="d-sm-flex align-items-sm-start" style="flex: 1 1 auto; margin-right: calc(.5 * var(--gutter-x));">
+                        <div class="form-control-feedback form-control-feedback-start flex-grow-1 mb-3 mb-sm-0">
+                            <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Tên Thể Loại" ng-model="ServiceType.Search.Text">
+                            <div class="form-control-feedback-icon">
+                                <i class="ph-books"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_service_type" style="border-radius: var(--border-radius);">
+                        <i class="ph-plus me-2"></i>
+                        Thêm Thể Loại
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width:50px">STT</th>
+                    <th>Tên thể loại</th>
+                    <th>Ngày chỉnh sửa</th>
+                    <th style="width:60px">Chỉnh sửa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:center">1</td>
+                    <td>Thiếu nhi</td>
+                    <td style="text-align:center">28/03/2024</td>
+                    <td style="text-align: center;vertical-align: middle; padding: 0px; margin: 0;">
+                        <a href="javascript:void(0);" ng-click="Edit(item.Service_Type_ID, item.Name, $index + 1 + ServiceType.Pager.StartIndex);" data-bs-toggle="modal" data-bs-target="#modal_edit_service_type">
+                            <i class="icon-pencil7 icon-08x" title="Cập nhật"></i>
+                        </a>
+                        <a href="javascript:void(0);" id="sweet_warning" ng-click="Delete(item.Service_Type_ID, $index + 1 + ServiceType.Pager.StartIndex);" class="text-danger">
+                            <i class="icon-bin icon-08x" title="Xóa"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr ng-show="ServiceType.Filter.length == 0" style="text-align:center">
+                    <td colspan="5">Không có dữ liệu</td>
+                </tr>
+                <tr ng-show="ServiceType.Filter.length > 0">
+                    <td colspan="5">
+                        <div style="text-align:right;padding:0px;">
+                            <pagination-style3 total-items="ServiceType.Filter.length" pager="ServiceType.Pager" fn-call-back="ServiceType.Search.Paging(PageClicked)"></pagination-style3>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

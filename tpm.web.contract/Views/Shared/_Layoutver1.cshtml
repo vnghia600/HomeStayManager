@@ -1,0 +1,51 @@
+﻿@using tpm.dto.admin;
+@{
+	TempData["versionjs"] = "2.0.0.0.8";// AppConfig.Common.VersionJS; //set tạm khi nào run thì xài AppConfig.Common.VersionJS
+	TempData.Keep("versionjs");
+	UserPrincipal CurrentUser = SessionHelper.Get<UserPrincipal>(Context.Session, SessionKeys.CurrentUser);
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>@ViewData["Title"] - Quản lý hợp đồng</title>
+
+	<!-- Global stylesheets -->
+	<link href="/assets/fonts/inter/inter.css" rel="stylesheet" type="text/css">
+	<link href="/assets/icons/phosphor/styles.min.css" rel="stylesheet" type="text/css">
+	<link href="/assets/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css"/>
+	<link href="/assets/css/ltr/all.min.css" id="stylesheet" rel="stylesheet" type="text/css">
+	<link href="/tpm/css/tpm_style.css" rel="stylesheet"  type="text/css"/>
+	<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<!-- /global stylesheets -->
+
+</head>
+
+<body ng-app="MyApp">
+	@{
+		await Html.RenderPartialAsync("~/Views/Shared/_scripts.cshtml", CurrentUser);
+	}
+	@{
+		await Html.RenderPartialAsync("~/Views/Shared/_header.cshtml", CurrentUser);
+    }
+	@{
+		await Html.RenderPartialAsync("~/Views/Shared/_breadcrumb.cshtml", CurrentUser);
+	}
+	
+	<!-- Page content -->
+	<div class="page-content pt-10">
+		<!-- Main content -->
+		<div class="content-wrapper">
+			@RenderBody()
+		</div>
+		<!-- /main content -->
+	</div>
+	<!-- /page content -->
+	@{
+		await Html.RenderPartialAsync("~/Views/Shared/_footer.cshtml", CurrentUser);
+	}
+	@RenderSection("jsScript", false)
+</body>
+</html>
