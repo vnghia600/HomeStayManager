@@ -28,6 +28,7 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+.config/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -322,6 +323,8 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+**/appsetting.json
+
 # OpenCover UI analysis results
 OpenCover/
 
@@ -346,4 +349,5 @@ healthchecksdb
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
-.config/
+# Ignore Upload
+tpm.web.contract/wwwroot/uploads
