@@ -307,11 +307,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\tpm.dto.csproj",
+      "projectUniqueName": "E:\\Source\\HomeStayManager\\tpm.dto\\tpm.dto.csproj",
       "projectName": "tpm.dto.admin",
-      "projectPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\tpm.dto.csproj",
+      "projectPath": "E:\\Source\\HomeStayManager\\tpm.dto\\tpm.dto.csproj",
       "packagesPath": "C:\\Users\\DokGo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\obj\\",
+      "outputPath": "E:\\Source\\HomeStayManager\\tpm.dto\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DokGo\\AppData\\Roaming\\NuGet\\NuGet.Config",

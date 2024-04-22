@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vTPSXBmaPCkPoqLb7TBexZG4iDbANpgwZ1vAQzZxZXP8+phygczbi7+6dltCc9tx/hM2wbnhIgeFE0OsHMLSHg==",
+  "dgSpecHash": "s8AUWTdlpUVK8cginXPDr5Szs0oIXOLtvdv5Vx/9I2uPykF8mxMN0k9FwMWx553HUp7h9cZcrVhcKwHLGjr3rA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.web.contract\\tpm.web.contract.csproj",
+  "projectFilePath": "E:\\Source\\HomeStayManager\\tpm.web.contract\\tpm.web.contract.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DokGo\\.nuget\\packages\\autofac\\7.0.1\\autofac.7.0.1.nupkg.sha512",
     "C:\\Users\\DokGo\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",

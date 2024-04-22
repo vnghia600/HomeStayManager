@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tpm.business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02a17577dfcf9484e3ecc07235264bb31b37e434")]
 [assembly: System.Reflection.AssemblyProductAttribute("tpm.business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tpm.business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

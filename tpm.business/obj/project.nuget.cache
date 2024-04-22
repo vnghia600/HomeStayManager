@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EQBFIwd1XQCJ1i4uMACQvOOhztxT8NdQGvLzaXP2ny/ieq6HrFFgdzw+OyiOUo029YG75va9RcQXsGdErEuFnA==",
+  "dgSpecHash": "CJEbbHJHLX0euDq15BZS9+vtxs7cIK4ETvyMOaRVHuadoedM0Zd6ST0CYqM/wjw0REtkp5DaLHbqS55fdJqAXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.business\\tpm.business.csproj",
+  "projectFilePath": "E:\\Source\\HomeStayManager\\tpm.business\\tpm.business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DokGo\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",
     "C:\\Users\\DokGo\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",

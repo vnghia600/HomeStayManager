@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.web.contract\\tpm.web.contract.csproj": {}
+    "E:\\Source\\HomeStayManager\\tpm.web.contract\\tpm.web.contract.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.business\\tpm.business.csproj": {
+    "E:\\Source\\HomeStayManager\\tpm.business\\tpm.business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.business\\tpm.business.csproj",
+        "projectUniqueName": "E:\\Source\\HomeStayManager\\tpm.business\\tpm.business.csproj",
         "projectName": "tpm.business",
-        "projectPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.business\\tpm.business.csproj",
+        "projectPath": "E:\\Source\\HomeStayManager\\tpm.business\\tpm.business.csproj",
         "packagesPath": "C:\\Users\\DokGo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.business\\obj\\",
+        "outputPath": "E:\\Source\\HomeStayManager\\tpm.business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DokGo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\tpm.dto.csproj": {
-                "projectPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\tpm.dto.csproj"
+              "E:\\Source\\HomeStayManager\\tpm.dto\\tpm.dto.csproj": {
+                "projectPath": "E:\\Source\\HomeStayManager\\tpm.dto\\tpm.dto.csproj"
               }
             }
           }
@@ -110,14 +110,14 @@
         }
       }
     },
-    "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\tpm.dto.csproj": {
+    "E:\\Source\\HomeStayManager\\tpm.dto\\tpm.dto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\tpm.dto.csproj",
+        "projectUniqueName": "E:\\Source\\HomeStayManager\\tpm.dto\\tpm.dto.csproj",
         "projectName": "tpm.dto.admin",
-        "projectPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\tpm.dto.csproj",
+        "projectPath": "E:\\Source\\HomeStayManager\\tpm.dto\\tpm.dto.csproj",
         "packagesPath": "C:\\Users\\DokGo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\obj\\",
+        "outputPath": "E:\\Source\\HomeStayManager\\tpm.dto\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DokGo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -192,14 +192,14 @@
         }
       }
     },
-    "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.web.contract\\tpm.web.contract.csproj": {
+    "E:\\Source\\HomeStayManager\\tpm.web.contract\\tpm.web.contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.web.contract\\tpm.web.contract.csproj",
+        "projectUniqueName": "E:\\Source\\HomeStayManager\\tpm.web.contract\\tpm.web.contract.csproj",
         "projectName": "tpm.web.contract",
-        "projectPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.web.contract\\tpm.web.contract.csproj",
+        "projectPath": "E:\\Source\\HomeStayManager\\tpm.web.contract\\tpm.web.contract.csproj",
         "packagesPath": "C:\\Users\\DokGo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.web.contract\\obj\\",
+        "outputPath": "E:\\Source\\HomeStayManager\\tpm.web.contract\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DokGo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -216,11 +216,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.business\\tpm.business.csproj": {
-                "projectPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.business\\tpm.business.csproj"
+              "E:\\Source\\HomeStayManager\\tpm.business\\tpm.business.csproj": {
+                "projectPath": "E:\\Source\\HomeStayManager\\tpm.business\\tpm.business.csproj"
               },
-              "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\tpm.dto.csproj": {
-                "projectPath": "C:\\Users\\DokGo\\Documents\\HomeStayManagement\\tpm.dto\\tpm.dto.csproj"
+              "E:\\Source\\HomeStayManager\\tpm.dto\\tpm.dto.csproj": {
+                "projectPath": "E:\\Source\\HomeStayManager\\tpm.dto\\tpm.dto.csproj"
               }
             }
           }
